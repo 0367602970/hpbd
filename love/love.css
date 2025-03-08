@@ -704,5 +704,38 @@ body{
     width: 100%;
 }
 
+@media (max-width: 480px) {
+    .boxSlider {
+        max-width: 250px;
+    }
 
+    .slider img {
+        border-radius: 5px;
+    }
+
+    .handsCat img {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #inputField {
+        font-size: 12px;
+    }
+
+    .buttonLove {
+        transform: scale(0.7);
+    }
+
+    .boxLetter {
+        width: 95%;
+    }
+
+    .heartLetterItem {
+        width: 25px;
+        height: 25px;
+    }
+}
 
