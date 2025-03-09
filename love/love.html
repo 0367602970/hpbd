@@ -19,20 +19,7 @@
                 <h1>Happy birthday</h1>
             </div>
             <div class="boxSlider">
-                    <div class="listSlider">
-                        <div class="slider">
-                            <img src="../image/baby1.jpg" alt="">
-                        </div>
-                        <div class="slider">
-                            <img src="../image/baby2.jpg" alt="">
-                        </div>
-                        <div class="slider">
-                            <img src="../image/baby3.jpg" alt="">
-                        </div>
-                        <div class="slider">
-                            <img src="../image/baby4.jpg" alt="">
-                        </div>
-                    </div>
+                    <div class="listSlider"></div>
                 <div class="left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
@@ -153,13 +140,43 @@
         },10)
     }
 
+    const images = [
+        "../image/slideBaby/baby1.jpg",
+        "../image/slideBaby/baby2.jpg",
+        "../image/slideBaby/baby3.jpg",
+        "../image/slideBaby/baby4.jpg",
+        "../image/slideBaby/baby5.jpg",
+        "../image/slideBaby/baby6.jpg",
+        "../image/slideBaby/baby7.jpg",
+        "../image/slideBaby/baby8.jpg",
+        "../image/slideBaby/baby9.jpg",
+        "../image/slideBaby/baby10.jpg",
+        "../image/slideBaby/baby11.jpg",
+        "../image/slideBaby/baby12.jpg",
+        "../image/slideBaby/baby13.jpg",
+        "../image/slideBaby/baby14.jpg",
+        "../image/slideBaby/baby15.jpg"
+    ];
+
+    const sliderContainer = document.querySelector(".listSlider");
+
+    // ✅ Tạo ảnh từ danh sách & thêm vào HTML
+    images.forEach((imgSrc) => {
+        let sliderDiv = document.createElement("div");
+        sliderDiv.className = "slider";
+        sliderDiv.innerHTML = `<img src="${imgSrc}" alt="">`;
+        sliderContainer.appendChild(sliderDiv);
+    });
+
+    // ✅ Auto Slide Function
     function autoSlide() {
-                setInterval(() => {
-                    var slider = document.querySelectorAll(".slider");
-                    document.querySelector(".listSlider").appendChild(slider[0]);
-                }, 3000);
-            }
-            autoSlide();
+        setInterval(() => {
+            let firstSlide = document.querySelector(".slider");
+            sliderContainer.appendChild(firstSlide);
+        }, 3000);
+    }
+
+    autoSlide();
     document.onmousemove = function(e){
         getHeart(e)
     }
